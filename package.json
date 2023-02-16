@@ -1,0 +1,32 @@
+{
+  "name": "chingu-tier-i-project",
+  "version": "1.0.0",
+  "description": "A clone of the Conquer Bootstrap but without using any frameworks or libraries.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mnichols08/chingu-tier-i-project.git"
+  },
+  "keywords": [
+    "chingu",
+    "voyage",
+    "tier",
+    "i",
+    "small",
+    "project",
+    "conquer",
+    "clone",
+    "vanilla",
+    "plain",
+    "without"
+  ],
+  "author": "Mikey Nichols",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mnichols08/chingu-tier-i-project/issues"
+  },
+  "homepage": "https://github.com/mnichols08/chingu-tier-i-project#readme"
+}
