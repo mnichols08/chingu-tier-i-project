@@ -1,0 +1,101 @@
+@import "./reset";
+@import "./mediaqueries";
+@import "./mixins";
+@import "./parallax";
+@import "./header";
+@import "./nav";
+@import "./about";
+@import "./services";
+@import "./main";
+@import "./card";
+@import "./contact";
+@import "./footer"; 
+
+html { height: 100%; overflow:auto; }
+body { height: 100%; }
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6, {
+    font-family: "Open Sans", Helvetica, Arial, sans-serif !important;
+}
+
+.container {
+    max-width: 75em;
+		margin: auto;
+}
+
+.reverse {
+	flex-direction: row-reverse;
+}
+
+.inline-block > div {
+	display: inline-block;
+}
+
+.flex {
+	display: flex;
+}
+
+.flex-two-col {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.flex-two-col > div {
+		//max-width: 360px;
+	  width: 45%;
+		height: auto;
+    margin: 2em auto;
+	// @media @smphone, @lgphone {
+	// 	width: 360px;
+	// }
+}
+
+.flex-three-col {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.flex-three-col > div {
+	//width: 30%;
+	max-width: 300px;
+	  //width: 85%;
+    margin: 1em auto
+	// @media @smphone, @lgphone {
+	// 	width: 360px;
+	// }
+}
+
+.flex-four-col {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.flex-four-col > div {
+	width: 21%;
+	// @media @smphone, @lgphone{
+	// 	width: 80%
+	// }
+}
+
+.flex-five-col {
+	display: flex;
+	flex-wrap:2ap;
+}
+
+.flex-five-col > div {
+	width: 20%;
+}
+
+.flex-reverse {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: flex-end;
+}
+
+

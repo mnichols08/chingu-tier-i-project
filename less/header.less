@@ -1,0 +1,126 @@
+@import "./mediaqueries";
+nav {
+	position: fixed;
+	z-index: 1021;
+	@media only screen and (min-width: 768px) {
+		background: #383e4c none repeat scroll 0 0;
+		left: 0;
+		right: 0;
+		width: calc(100vw - 17.5px);
+		min-height: 50px;
+		margin-bottom: 20px;
+		border: 1px solid transparent;
+		input[type="checkbox"] {
+			display: none;
+		}
+	}
+	@media only screen and (max-width: 767px) {
+		transform: translate(-50%, -50%);
+		top: 25%;
+		left: 50%;
+		input[type="checkbox"] {
+			display: block;
+			transform: translate(-50%, -50%);
+			position: absolute;
+			top: -23vh;
+			left: 40vw;
+			&:checked {
+
+				& ~ ul {
+					display: flex;
+					position: absolute;
+					transform: translate(-50%, -50%);
+				}
+			}
+		}
+	}
+	ul {
+		display: flex;
+		justify-content: center;
+		@media only screen and (max-width: 767px) {
+			flex-direction: column;
+			align-items: center;
+			display: none;
+		}
+		li {
+			display: flex;
+			align-items: center;
+			padding: 1em;
+			a {
+				background: #383e4c none repeat scroll 0 0;
+				border: 1px solid #646d7c;
+				color: #fff;
+				font-size: 20px;
+				padding: 15px 25px;
+				text-decoration: none;
+				text-transform: capitalize;
+				-webkit-transition: all 0.3s ease;
+				transition: all 0.3s ease;
+				&.current,
+				&:hover {
+					background: #49505f;
+				}
+			}
+		}
+	}
+	@media @smphone {
+		ul {
+			display: none;
+		}
+		input[type="checkbox"] {
+			position: fixed;
+			top: 5%;
+			right: 5%;
+			&:checked ~ ul {
+				display: block;
+				background: #40475a none repeat scroll 0 0;
+				a {
+					color: #fff;
+					text-decoration: none;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+	}
+}
+header {
+	.parallax__layer--back {
+		background: url("../images/bg-1.jpg");
+		background-repeat: no-repeat;
+		background-position: bottom;
+		background-size: 100%;
+		position: absolute;
+		top: -78%;
+		left: -51%;
+		transform: translateZ(-1px);
+		
+			background-size: 250%;
+		
+	}
+	text-align: center;
+	@media @smphone {
+		height: 22em;
+	}
+	.title {
+	top: 33%;
+	color: #fff;
+	text-shadow: 2px 2px black;
+    @media @smphone {
+        margin-top: 4em;
+    }
+	
+	h1{
+		text-transform: uppercase;
+		font-size:4em;
+	}
+	h2{
+		font-size: 2em;
+	}
+	@media @smphone {
+		top: 25%;
+	}
+}
+}
+

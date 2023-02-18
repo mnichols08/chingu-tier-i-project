@@ -4,7 +4,10 @@
   "description": "A clone of the Conquer Bootstrap but without using any frameworks or libraries.",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile-less": "lessc less/index.less less/index.processed.css",
+    "devserver": "live-server",
+    "watch-less": "less-watch-compiler less css index.less",
+    "start": "npm-run-all --parallel devserver watch-less"
   },
   "repository": {
     "type": "git",
@@ -28,5 +31,8 @@
   "bugs": {
     "url": "https://github.com/mnichols08/chingu-tier-i-project/issues"
   },
-  "homepage": "https://github.com/mnichols08/chingu-tier-i-project#readme"
+  "homepage": "https://github.com/mnichols08/chingu-tier-i-project#readme",
+  "dependencies": {
+    "live-server": "^1.2.2"
+  }
 }
