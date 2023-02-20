@@ -47,28 +47,32 @@ h6, {
 }
 
 .flex-two-col > div {
-		//max-width: 360px;
+		max-width: 360px;
 	  width: 45%;
 		height: auto;
     margin: 2em auto;
-	// @media @smphone, @lgphone {
-	// 	width: 360px;
-	// }
+	@media @smphone, @lgphone, @smtablet {
+		flex-wrap: wrap;
+	}
 }
 
 .flex-three-col {
 	display: flex;
 	flex-wrap: wrap;
+	@media @smphone,@lgphone, @smtablet {
+		flex-direction: column;
+	}
 }
 
 .flex-three-col > div {
-	//width: 30%;
+
 	max-width: 300px;
-	  //width: 85%;
-    margin: 1em auto
-	// @media @smphone, @lgphone {
-	// 	width: 360px;
-	// }
+	
+    margin: 1em auto;
+	@media @lgtablet {
+		width: 30%;
+	}
+	
 }
 
 .flex-four-col {
@@ -77,10 +81,7 @@ h6, {
 }
 
 .flex-four-col > div {
-	width: 21%;
-	// @media @smphone, @lgphone{
-	// 	width: 80%
-	// }
+	width: 260px;
 }
 
 .flex-five-col {

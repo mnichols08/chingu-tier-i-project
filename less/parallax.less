@@ -3,14 +3,16 @@
 
 .parallax {
 	perspective: 1px;
-	height: 100vh;
+	height: 100%;
 	overflow-x: hidden;
 	overflow-y: auto;
 	background-color: #fff;
 	&__group {
 		position: relative;
-		height: 100vh;
+		height: 25vh;
 		transform-style: preserve-3d;
+		
+		
 	}
 	&__layer {
 		position: absolute;
@@ -26,6 +28,7 @@
 			width: 200vw;
 			left: -50em;
 			transform: translateZ(-1px);
+			
 		}
 	}
 }

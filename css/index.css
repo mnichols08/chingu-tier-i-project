@@ -192,14 +192,14 @@ table {
 }
 .parallax {
   perspective: 1px;
-  height: 100vh;
+  height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
   background-color: #fff;
 }
 .parallax__group {
   position: relative;
-  height: 100vh;
+  height: 25vh;
   transform-style: preserve-3d;
 }
 .parallax__layer {
@@ -218,42 +218,49 @@ table {
   left: -50em;
   transform: translateZ(-1px);
 }
+header {
+  text-align: center;
+}
+header .parallax__layer--back {
+  background: url("../images/bg-1.jpg");
+  background-repeat: no-repeat;
+  position: absolute;
+  transform: translateZ(-1px);
+  background-size: 260%;
+  background-size: 150%;
+  top: -201%;
+  left: -50%;
+}
+@media only screen and (max-width: 375px) {
+  header {
+    height: 28em;
+  }
+}
+header .title {
+  color: #fff;
+  text-shadow: 2px 2px black;
+  margin-top: 25%;
+}
+@media only screen and (max-width: 375px) {
+  header .title {
+    top: 15%;
+  }
+}
+@media only screen and (min-width: 376px) and (max-width: 467px) {
+  header .title {
+    top: 25%;
+  }
+}
+header .title h1 {
+  text-transform: uppercase;
+  font-size: 4em;
+}
+header .title h2 {
+  font-size: 2em;
+}
 nav {
   position: fixed;
   z-index: 1021;
-}
-@media only screen and (min-width: 768px) {
-  nav {
-    background: #383e4c none repeat scroll 0 0;
-    left: 0;
-    right: 0;
-    width: calc(100vw - 17.5px);
-    min-height: 50px;
-    margin-bottom: 20px;
-    border: 1px solid transparent;
-  }
-  nav input[type="checkbox"] {
-    display: none;
-  }
-}
-@media only screen and (max-width: 767px) {
-  nav {
-    transform: translate(-50%, -50%);
-    top: 25%;
-    left: 50%;
-  }
-  nav input[type="checkbox"] {
-    display: block;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    top: -23vh;
-    left: 40vw;
-  }
-  nav input[type="checkbox"]:checked ~ ul {
-    display: flex;
-    position: absolute;
-    transform: translate(-50%, -50%);
-  }
 }
 nav ul {
   display: flex;
@@ -286,7 +293,7 @@ nav ul li a.current,
 nav ul li a:hover {
   background: #49505f;
 }
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 375px) {
   nav ul {
     display: none;
   }
@@ -307,62 +314,13 @@ nav ul li a:hover {
     text-decoration: underline;
   }
 }
-header {
-  text-align: center;
-}
-header .parallax__layer--back {
-  background: url("../images/bg-1.jpg");
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-size: 100%;
-  position: absolute;
-  top: -78%;
-  left: -51%;
-  transform: translateZ(-1px);
-  background-size: 250%;
-}
-@media only screen and (max-width: 320px) {
-  header {
-    height: 22em;
-  }
-}
-header .title {
-  top: 33%;
-  color: #fff;
-  text-shadow: 2px 2px black;
-}
-@media only screen and (max-width: 320px) {
-  header .title {
-    margin-top: 4em;
-  }
-}
-header .title h1 {
-  text-transform: uppercase;
-  font-size: 4em;
-}
-header .title h2 {
-  font-size: 2em;
-}
-@media only screen and (max-width: 320px) {
-  header .title {
-    top: 25%;
-  }
-}
 nav {
   position: fixed;
-  z-index: 1021;
-  min-height: 50px;
-  margin-bottom: 20px;
-  border: 1px solid transparent;
-  display: flex;
-  transform: translate(-50%, -50%);
-  top: 10%;
-  left: 50%;
 }
 nav label.fa.fa-bars.icon {
   position: fixed;
-  right: -50vw;
-  top: -5vh;
+  right: 2em;
+  top: 1em;
   font-size: 1em;
   color: #fff;
   padding: 9px 10px;
@@ -379,10 +337,8 @@ nav input[type="checkbox"] {
 }
 nav input[type="checkbox"]:checked ~ ul {
   display: flex;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  top: 30vh;
-  width: 86vw;
+  margin: 5em auto;
+  width: 90%;
 }
 nav ul {
   display: flex;
@@ -437,22 +393,43 @@ nav input[type="checkbox"]:checked ~ ul a:hover {
   text-decoration: underline;
 }
 section#about {
-  margin: auto;
   background: #fff;
 }
-@media only screen and (max-width: 320px) {
+@media only screen and (min-width: 468px) and (max-width: 767px), only screen and (min-width: 720px) and (max-width: 959px) {
   section#about {
-    height: 625vh;
+    height: 85em;
+  }
+}
+@media only screen and (min-width: 376px) and (max-width: 467px) {
+  section#about {
+    height: 175em;
   }
   section#about .flex-two-col div {
     width: 100%;
   }
 }
-section#about .flex-two-col {
-  margin-top: 1em;
+@media only screen and (max-width: 375px) {
+  section#about {
+    height: 195em;
+  }
+  section#about .flex-two-col div {
+    width: 100%;
+  }
 }
 section#about .container {
   padding-top: 3em;
+}
+section#about .flex-two-col {
+  margin: auto;
+}
+@media only screen and (max-width: 375px), only screen and (min-width: 376px) and (max-width: 467px) {
+  section#about .flex-two-col {
+    margin: 1em;
+  }
+}
+section#about .flex-two-col > div {
+  max-width: 555px;
+  margin: 1em auto;
 }
 section#about .flex-two-col h3,
 section#about .flex-two-col h4 {
@@ -461,6 +438,25 @@ section#about .flex-two-col h4 {
   font-weight: 700;
   color: #666;
 }
+@media only screen and (min-width: 376px) and (max-width: 467px) {
+  section#about .flex-two-col h3,
+  section#about .flex-two-col h4,
+  section#about .flex-two-col p {
+    max-width: 80%;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 375px), only screen and (min-width: 376px) and (max-width: 467px) {
+  section#about .flex-two-col h3,
+  section#about .flex-two-col h4,
+  section#about .flex-two-col p {
+    max-width: 80%;
+    text-align: center;
+  }
+}
+section#about .flex-two-col button {
+  margin-left: 5em;
+}
 section#services {
   height: 19.8em;
   background: url("../images/bg-2.jpg");
@@ -468,14 +464,21 @@ section#services {
   background-size: cover;
 }
 section#services_contd {
+  height: 225em;
   background: #fff;
 }
-@media only screen and (max-width: 320px) {
+@media only screen and (min-width: 468px) and (max-width: 767px), only screen and (min-width: 720px) and (max-width: 959px) {
   section#services_contd {
-    height: 750vh;
+    height: 126em;
   }
-  section#services_contd .flex-four-col > div {
-    width: 100%;
+}
+section#services_contd .dlex-four-col > div {
+  max-width: 260px;
+  min-width: 260px;
+}
+@media only screen and (min-width: 720px) and (max-width: 959px) {
+  section#services_contd .dlex-four-col > div {
+    margin: 3em;
   }
 }
 section#services_contd h4 {
@@ -484,8 +487,8 @@ section#services_contd h4 {
   font-weight: 700;
   color: #666;
 }
-section#services_contd .single_card {
-  max-width: 95%;
+section#services_contd .single_card .card {
+  margin: 1em;
 }
 section#services_contd .single_card h4 {
   text-align: left;
@@ -495,6 +498,12 @@ section#services_contd .single_card button {
 }
 section#services_contd .single_card .card__body {
   padding: 1.8em;
+  margin: 2em;
+}
+@media only screen and (max-width: 375px), only screen and (min-width: 376px) and (max-width: 467px) {
+  section#services_contd .single_card .card__body {
+    margin: 0.5em;
+  }
 }
 section#services .title {
   text-align: center;
@@ -511,8 +520,13 @@ section#services .title h4 {
   color: #666;
 }
 .card {
-  margin: 1em;
+  margin: 1em auto;
   background: #f2f2f2;
+}
+@media only screen and (min-width: 720px) and (max-width: 959px), only screen and (min-width: 960px) and (max-width: 1199px) {
+  .card {
+    margin: 3em auto auto 6em;
+  }
 }
 .card__header {
   overflow: hidden;
@@ -524,7 +538,7 @@ section#services .title h4 {
   font-size: 20px;
   font-weight: 700;
 }
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 375px) {
   .card__body h3 {
     text-align: center;
   }
@@ -548,11 +562,21 @@ section#services .title h4 {
   line-height: 1.6em;
 }
 section#contact {
-  margin: 5em auto;
+  margin: 1em auto;
   background: url("../images/bg-3.jpg");
   background-attachment: fixed;
   background-size: cover;
-  height: 581px;
+  height: 41em;
+}
+@media only screen and (max-width: 375px) {
+  section#contact {
+    margin: auto -7em;
+  }
+}
+@media only screen and (min-width: 376px) and (max-width: 467px) {
+  section#contact {
+    margin: auto -7em;
+  }
 }
 section#contact .title {
   text-align: center;
@@ -561,12 +585,28 @@ section#contact .title {
 section#contact .flex-two-col {
   max-width: 37em;
 }
+@media only screen and (max-width: 375px) {
+  section#contact .flex-two-col {
+    width: 96%;
+  }
+}
+@media only screen and (min-width: 376px) and (max-width: 467px) {
+  section#contact .flex-two-col {
+    width: 96%;
+  }
+}
 section#contact .flex-two-col > div {
   margin: 0;
 }
 section#contact .flex-two-col div.left,
 section#contact textarea.right {
   width: 45%;
+}
+@media only screen and (max-width: 375px), only screen and (min-width: 376px) and (max-width: 467px), only screen and (min-width: 468px) and (max-width: 767px) {
+  section#contact .flex-two-col div.left,
+  section#contact textarea.right {
+    width: 100%;
+  }
 }
 section#contact h5 {
   font-size: 36px;
@@ -584,6 +624,11 @@ section#contact p {
   padding: 20px 15px;
   max-width: 37em;
   margin: auto auto 20px;
+}
+@media only screen and (min-width: 468px) and (max-width: 767px) {
+  section#contact p {
+    width: 92.2%;
+  }
 }
 section#contact input:focus,
 section#contact textarea:focus {
@@ -609,10 +654,20 @@ section#contact textarea::-ms-input-placeholder {
   /* Microsoft Edge */
   color: #000;
 }
+@media only screen and (max-width: 375px) {
+  section#contact button {
+    margin-left: -6em;
+  }
+}
+@media only screen and (min-width: 376px) and (max-width: 467px) {
+  section#contact button {
+    margin-left: -6em;
+  }
+}
 section#contact input {
   border: none;
   display: block;
-  width: 100%;
+  width: 85%;
   height: 34px;
   background: rgba(242, 242, 242, 0.4);
   padding: 6px 12px;
@@ -625,7 +680,12 @@ section#contact input {
   -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
   -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-  margin-bottom: 1em;
+  margin: 0 0 1em auto;
+}
+@media only screen and (max-width: 375px), only screen and (min-width: 376px) and (max-width: 467px), only screen and (min-width: 468px) and (max-width: 767px) {
+  section#contact input {
+    width: 96%;
+  }
 }
 section#contact textarea {
   font-family: inherit;
@@ -643,6 +703,14 @@ section#contact textarea {
   position: relative;
   left: 5em;
   resize: none;
+  margin: 0 -1em 1em auto;
+}
+@media only screen and (max-width: 375px), only screen and (min-width: 376px) and (max-width: 467px), only screen and (min-width: 468px) and (max-width: 767px), only screen and (min-width: 720px) and (max-width: 959px) {
+  section#contact textarea {
+    left: 0;
+    max-width: 100%;
+    margin: 0 -1em 1em auto;
+  }
 }
 footer {
   margin-bottom: -33em;
@@ -688,6 +756,36 @@ footer hr {
 .hide {
   display: none;
 }
+.fade-in {
+  opacity: 1;
+  animation-name: fadeIn;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 0.75s;
+}
+.fade-out {
+  opacity: 0;
+  animation-name: fadeOut;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 0.75s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 html {
   height: 100%;
   overflow: auto;
@@ -722,24 +820,40 @@ h6 {
   flex-wrap: wrap;
 }
 .flex-two-col > div {
+  max-width: 360px;
   width: 45%;
   height: auto;
   margin: 2em auto;
+}
+@media only screen and (max-width: 375px), only screen and (min-width: 376px) and (max-width: 467px), only screen and (min-width: 468px) and (max-width: 767px) {
+  .flex-two-col > div {
+    flex-wrap: wrap;
+  }
 }
 .flex-three-col {
   display: flex;
   flex-wrap: wrap;
 }
+@media only screen and (max-width: 375px), only screen and (min-width: 376px) and (max-width: 467px), only screen and (min-width: 468px) and (max-width: 767px) {
+  .flex-three-col {
+    flex-direction: column;
+  }
+}
 .flex-three-col > div {
   max-width: 300px;
   margin: 1em auto;
+}
+@media only screen and (min-width: 720px) and (max-width: 959px) {
+  .flex-three-col > div {
+    width: 30%;
+  }
 }
 .flex-four-col {
   display: flex;
   flex-wrap: wrap;
 }
 .flex-four-col > div {
-  width: 21%;
+  width: 260px;
 }
 .flex-five-col {
   display: flex;

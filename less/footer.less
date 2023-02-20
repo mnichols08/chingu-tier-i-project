@@ -1,45 +1,79 @@
 footer {
-	margin-bottom: -33em;
-	text-align: center;
-	h6 {
-		color: #666;
-		font-size: 32px;
-		font-style: italic;
-		margin-bottom: 25px;
-		margin-top: 1.5em;
-	}
-	blockquote {
-		color: #999;
-		font-style: italic;
-		margin-bottom: 30px;
-		font-size: 14px;
-		line-height: 1.6em;
-		margin: 3em auto;
+  margin-bottom: -33em;
+  text-align: center;
+  h6 {
+    color: #666;
+    font-size: 32px;
+    font-style: italic;
+    margin-bottom: 25px;
+    margin-top: 1.5em;
+  }
+  blockquote {
+    color: #999;
+    font-style: italic;
+    margin-bottom: 30px;
+    font-size: 14px;
+    line-height: 1.6em;
+    margin: 3em auto;
     max-width: 32em;
-	}
-	p {
-		color: #666;
-		font-size: 12px;
-		margin-bottom: 30px;
-		margin-top: 1em;
-	}
-	hr {
-		margin-top: 20px;
+  }
+  p {
+    color: #666;
+    font-size: 12px;
+    margin-bottom: 30px;
+    margin-top: 1em;
+  }
+  hr {
+    margin-top: 20px;
     margin-bottom: 20px;
     border: 0;
     border-top: 1px solid #eee;
-	}
+  }
 }
 .spacer {
-	position: relative;
-	top: 32em;
+  position: relative;
+  top: 32em;
 }
 #toTop {
-	position: fixed;
-	bottom: 2em;
-	right: 2em;
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
 }
 
 .hide {
-    display: none;
+  display: none;
+}
+
+.fade-in {
+  opacity: 1;
+  animation-name: fadeIn;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 0.75s;
+}
+
+.fade-out {
+  opacity: 0;
+  animation-name: fadeOut;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 0.75s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
