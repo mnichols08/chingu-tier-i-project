@@ -130,11 +130,15 @@ section#contact {
     resize: none;
     margin: 0 -1em 1em auto;
 
-    @media @smphone, @lgphone,@smtablet ,@lgtablet{
-     // width: 100%;
+    @media @smphone, @lgphone,@smtablet{
       left: 0;
       max-width: 100%;
       margin: 0 -1em 1em auto;
+    }
+    @media (min-width: 767px){
+      margin: 0;
+      margin-bottom: 1em;
+      left: 2.5em;
     }
   }
 }

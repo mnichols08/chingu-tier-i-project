@@ -199,7 +199,7 @@ table {
 }
 .parallax__group {
   position: relative;
-  height: 25vh;
+  height: 100vh;
   transform-style: preserve-3d;
 }
 .parallax__layer {
@@ -226,10 +226,20 @@ header .parallax__layer--back {
   background-repeat: no-repeat;
   position: absolute;
   transform: translateZ(-1px);
-  background-size: 260%;
+  top: -50%;
   background-size: 150%;
-  top: -201%;
-  left: -50%;
+}
+@media only screen and (max-width: 375px), only screen and (min-width: 376px) and (max-width: 467px), only screen and (min-width: 468px) and (max-width: 767px) {
+  header .parallax__layer--back {
+    background-size: 150%;
+    left: -52%;
+  }
+}
+@media only screen and (min-width: 720px) and (max-width: 959px), only screen and (min-width: 960px) and (max-width: 1199px), only screen and (min-width: 1200px) {
+  header .parallax__layer--back {
+    background-size: 100%;
+    left: -51%;
+  }
 }
 @media only screen and (max-width: 375px) {
   header {
@@ -237,30 +247,68 @@ header .parallax__layer--back {
   }
 }
 header .title {
+  top: 15em;
   color: #fff;
   text-shadow: 2px 2px black;
-  margin-top: 25%;
 }
-@media only screen and (max-width: 375px) {
+@media only screen and (min-width: 468px) and (max-width: 767px) {
   header .title {
-    top: 15%;
+    top: 15em;
   }
 }
-@media only screen and (min-width: 376px) and (max-width: 467px) {
+@media only screen and (max-width: 375px), only screen and (min-width: 376px) and (max-width: 467px) {
   header .title {
-    top: 25%;
+    top: 10em;
   }
 }
-header .title h1 {
+header h1 {
   text-transform: uppercase;
   font-size: 4em;
 }
-header .title h2 {
+header h2 {
   font-size: 2em;
 }
 nav {
   position: fixed;
   z-index: 1021;
+}
+@media (min-width: 768px) {
+  nav ul {
+    display: flex;
+  }
+  nav #labelForCheckbox,
+  nav input[type="checkbox"] {
+    display: none;
+  }
+}
+@media (min-width: 768px) and only screen and (min-width: 768px) {
+  nav {
+    background: #383e4c none repeat scroll 0 0;
+    left: 0;
+    right: 0;
+    min-height: 50px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+  }
+}
+@media (min-width: 768px) and only screen and (max-width: 767px) {
+  nav {
+    transform: translate(-50%, -50%);
+    top: 25%;
+    left: 50%;
+  }
+  nav input[type="checkbox"] {
+    display: block;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: -23vh;
+    left: 40vw;
+  }
+  nav input[type="checkbox"]:checked ~ ul {
+    display: flex;
+    position: absolute;
+    transform: translate(-50%, -50%);
+  }
 }
 nav ul {
   display: flex;
@@ -315,95 +363,101 @@ nav ul li a:hover {
   }
 }
 nav {
+  background-color: #222;
+  width: calc(100vw);
   position: fixed;
 }
-nav label.fa.fa-bars.icon {
-  position: fixed;
-  right: 2em;
-  top: 1em;
-  font-size: 1em;
-  color: #fff;
-  padding: 9px 10px;
-  margin-top: 8px;
-  margin-right: 15px;
-  margin-bottom: 8px;
-  background-color: #333;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
-}
-nav input[type="checkbox"] {
-  display: none;
-}
-nav input[type="checkbox"]:checked ~ ul {
-  display: flex;
-  margin: 5em auto;
-  width: 90%;
-}
-nav ul {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  display: none;
-}
-nav li {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  padding: 1em;
-  width: 90vw;
-  height: 1em;
-}
-nav li a {
-  background: #383E4C none repeat scroll 0 0;
-  width: 100%;
-  color: #fff;
-  font-size: 20px;
-  padding: 15px 25px;
-  text-decoration: none;
-  text-transform: capitalize;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  font-size: 14px;
-  line-height: 1.42857143;
-  border-top: 1px solid #ccc;
-}
-nav li a.current,
-nav li a:hover {
-  background: #49505f;
-}
-nav ul {
-  display: none;
-}
-nav input[type="checkbox"] {
-  position: fixed;
-  top: 50%;
-  right: 50%;
-}
-nav input[type="checkbox"]:checked ~ ul {
-  display: flex;
-  background: #40475a none repeat scroll 0 0;
-}
-nav input[type="checkbox"]:checked ~ ul a {
-  color: #fff;
-  text-decoration: none;
-}
-nav input[type="checkbox"]:checked ~ ul a:hover {
-  text-decoration: underline;
+@media (max-width: 767px) {
+  nav label.fa.fa-bars.icon {
+    position: fixed;
+    right: 2em;
+    top: 1em;
+    font-size: 1em;
+    color: #fff;
+    padding: 9px 10px;
+    margin-top: 8px;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    background-color: #333;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+  }
+  nav input[type="checkbox"] {
+    display: none;
+  }
+  nav input[type="checkbox"]:checked ~ ul {
+    display: flex;
+    margin: 5em auto;
+    width: 90%;
+  }
+  nav ul {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+  }
+  nav li {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 1em;
+    width: 90vw;
+    height: 1em;
+  }
+  nav li a {
+    background: #383E4C none repeat scroll 0 0;
+    width: 100%;
+    color: #fff;
+    font-size: 20px;
+    padding: 15px 25px;
+    text-decoration: none;
+    text-transform: capitalize;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-top: 1px solid #ccc;
+  }
+  nav li a.current,
+  nav li a:hover {
+    background: #49505f;
+  }
+  nav ul {
+    display: none;
+  }
+  nav input[type="checkbox"] {
+    position: fixed;
+    top: 50%;
+    right: 50%;
+  }
+  nav input[type="checkbox"]:checked ~ ul {
+    display: flex;
+    background: #40475a none repeat scroll 0 0;
+  }
+  nav input[type="checkbox"]:checked ~ ul a {
+    color: #fff;
+    text-decoration: none;
+  }
+  nav input[type="checkbox"]:checked ~ ul a:hover {
+    text-decoration: underline;
+  }
 }
 section#about {
   background: #fff;
 }
-@media only screen and (min-width: 468px) and (max-width: 767px), only screen and (min-width: 720px) and (max-width: 959px) {
+@media only screen and (min-width: 720px) and (max-width: 959px) {
   section#about {
-    height: 85em;
+    height: 95em;
+  }
+}
+@media only screen and (min-width: 376px) and (max-width: 467px), only screen and (min-width: 468px) and (max-width: 767px) {
+  section#about {
+    height: 185em;
   }
 }
 @media only screen and (min-width: 376px) and (max-width: 467px) {
-  section#about {
-    height: 175em;
-  }
   section#about .flex-two-col div {
     width: 100%;
   }
@@ -467,17 +521,31 @@ section#services_contd {
   height: 225em;
   background: #fff;
 }
-@media only screen and (min-width: 468px) and (max-width: 767px), only screen and (min-width: 720px) and (max-width: 959px) {
+@media only screen and (min-width: 468px) and (max-width: 767px) {
+  section#services_contd {
+    height: 205em;
+  }
+}
+@media only screen and (min-width: 720px) and (max-width: 959px) {
   section#services_contd {
     height: 126em;
   }
 }
-section#services_contd .dlex-four-col > div {
+section#services_contd .flex-four-col {
+  margin: auto;
+  justify-content: space-evenly;
+}
+@media only screen and (min-width: 960px) and (max-width: 1199px) {
+  section#services_contd .flex-four-col {
+    width: 66em;
+  }
+}
+section#services_contd .flex-four-col > div {
   max-width: 260px;
   min-width: 260px;
 }
 @media only screen and (min-width: 720px) and (max-width: 959px) {
-  section#services_contd .dlex-four-col > div {
+  section#services_contd .flex-four-col > div {
     margin: 3em;
   }
 }
@@ -486,6 +554,13 @@ section#services_contd h4 {
   font-size: 20px;
   font-weight: 700;
   color: #666;
+}
+@media only screen and (min-width: 960px) and (max-width: 1199px), only screen and (min-width: 1200px) {
+  section#services_contd .single_card {
+    max-width: 1140px;
+    margin: auto;
+    padding: 1em;
+  }
 }
 section#services_contd .single_card .card {
   margin: 1em;
@@ -514,7 +589,10 @@ section#services .title h4 {
   color: #fff;
   text-transform: capitalize;
   text-shadow: 2px 2px #aaa;
-  margin-bottom: 20px;
+  margin: auto -1em 1em -1em;
+}
+section#services .title p {
+  margin: 0em -3em 0em -3em;
 }
 .grey {
   color: #666;
@@ -538,7 +616,7 @@ section#services .title h4 {
   font-size: 20px;
   font-weight: 700;
 }
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 375px), only screen and (min-width: 376px) and (max-width: 467px), only screen and (min-width: 468px) and (max-width: 767px) {
   .card__body h3 {
     text-align: center;
   }
@@ -705,11 +783,18 @@ section#contact textarea {
   resize: none;
   margin: 0 -1em 1em auto;
 }
-@media only screen and (max-width: 375px), only screen and (min-width: 376px) and (max-width: 467px), only screen and (min-width: 468px) and (max-width: 767px), only screen and (min-width: 720px) and (max-width: 959px) {
+@media only screen and (max-width: 375px), only screen and (min-width: 376px) and (max-width: 467px), only screen and (min-width: 468px) and (max-width: 767px) {
   section#contact textarea {
     left: 0;
     max-width: 100%;
     margin: 0 -1em 1em auto;
+  }
+}
+@media (min-width: 767px) {
+  section#contact textarea {
+    margin: 0;
+    margin-bottom: 1em;
+    left: 2.5em;
   }
 }
 footer {

@@ -1,25 +1,33 @@
 const parallaxWindow = document.querySelector(".parallax");
-const toTop = () =>
+const closeMenu = () => document.getElementById("mini_button").checked = false
+const toTop = () => {
+  closeMenu();
   parallaxWindow.scroll({
     top: 0,
     behavior: "smooth",
-  });
-const toAbout = () =>
+  })};
+const toAbout = () => {
+  closeMenu();
   parallaxWindow.scroll({
     top: document.querySelector("#about").offsetTop,
     behavior: "smooth",
   });
-const toServices = () =>
+}
+const toServices = () => {
+  closeMenu();
   parallaxWindow.scroll({
     top: document.querySelector("#services").offsetTop,
     behavior: "smooth",
   });
-const toContact = () =>
+}
+const toContact = () => {
+  closeMenu();
   parallaxWindow.scroll({
     left: 0,
     top: document.querySelector("#contact").offsetTop,
     behavior: "smooth",
   });
+}
 document.querySelector("year").innerText = new Date().getFullYear();
 document.querySelectorAll("nav ul li")[0].addEventListener("click", toTop);
 document.querySelectorAll("nav ul li")[1].addEventListener("click", toAbout);
@@ -37,7 +45,7 @@ const fadeIn = () => {
   }, 150)
 		
 }
-let show;
+
 const fadeOut = () => {setTimeout(() => {
   if (parallaxWindow.scrollTop <= 150){
 		button.classList.remove("fade-in");

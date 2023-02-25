@@ -3,20 +3,28 @@
 
 
 section#services {
-
-	// position: relative;
-	// top: -25em;
-	&_contd {
+&_contd {
 		height: 225em;
-		@media @smtablet, @lgtablet {
+		@media @smtablet {
+			height: 205em;
+		}
+		@media @lgtablet {
 			height: 126em;
 		}
-		.dlex-four-col > div {
+		.flex-four-col{
+			margin: auto;
+			justify-content: space-evenly;
+			@media @desktop {
+				width: 66em;
+			}
+		& > div {
 			max-width: 260px;
 			min-width: 260px;
 			@media @lgtablet {
 				margin: 3em;
 			}
+
+		}
 		
 	
 		}
@@ -29,6 +37,11 @@ section#services {
 			color: #666;
 		}
 		.single_card {
+			@media @desktop,@lgdesktop {
+				max-width: 1140px;
+				margin: auto;
+				padding: 1em;
+			}
 			.card {
 				margin: 1em;
 			}
@@ -58,10 +71,13 @@ section#services {
 			color: #fff;
 			text-transform: capitalize;
 			text-shadow: 2px 2px #aaa;
-			margin-bottom: 20px;
+			margin: auto -1em 1em -1em;
 		}
 		text-align: center;
 		color: #fff;
+		p {
+			margin: 0em -3em 0em -3em;
+		}
 	}
 }
 

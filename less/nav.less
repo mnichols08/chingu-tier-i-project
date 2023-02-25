@@ -2,38 +2,43 @@
 nav {
 	position: fixed;
 	z-index: 1021;
-	// @media only screen and (min-width: 768px) {
-	// 	background: #383e4c none repeat scroll 0 0;
-	// 	left: 0;
-	// 	right: 0;
-	// 	width: calc(100vw - 17.5px);
-	// 	min-height: 50px;
-	// 	margin-bottom: 20px;
-	// 	border: 1px solid transparent;
-	// 	input[type="checkbox"] {
-	// 		display: none;
-	// 	}
-	// }
-	// @media only screen and (max-width: 767px) {
-	// 	transform: translate(-50%, -50%);
-	// 	top: 25%;
-	// 	left: 50%;
-	// 	input[type="checkbox"] {
-	// 		display: block;
-	// 		transform: translate(-50%, -50%);
-	// 		position: absolute;
-	// 		top: -23vh;
-	// 		left: 40vw;
-	// 		&:checked {
-
-	// 			& ~ ul {
-	// 				display: flex;
-	// 				position: absolute;
-	// 				transform: translate(-50%, -50%);
-	// 			}
-	// 		}
-	// 	}
-	// }
+  @media (min-width: 768px){
+    ul {
+      display: flex;
+    }
+    #labelForCheckbox, input[type="checkbox"] {
+      display: none;
+    }
+    @media only screen and (min-width: 768px) {
+      background: #383e4c none repeat scroll 0 0;
+      left: 0;
+      right: 0;
+      min-height: 50px;
+      margin-bottom: 20px;
+      border: 1px solid transparent;
+      
+    }
+    @media only screen and (max-width: 767px) {
+      transform: translate(-50%, -50%);
+      top: 25%;
+      left: 50%;
+      input[type="checkbox"] {
+        display: block;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        top: -23vh;
+        left: 40vw;
+        &:checked {
+  
+          & ~ ul {
+            display: flex;
+            position: absolute;
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+    }
+  }
 	ul {
 		display: flex;
 		justify-content: center;
@@ -86,6 +91,8 @@ nav {
 	}
 }
 nav {
+  background-color: #222;
+  width: calc(100vw);
   position: fixed;
   // z-index: 1021;
   // min-height: 50px;
@@ -95,6 +102,7 @@ nav {
    // transform: translate(-50%, -50%);
   // top: 6em;
   // right:30%;
+  @media (max-width: 767px){
  label.fa.fa-bars.icon{
     position: fixed;
     right: 2em;
@@ -179,4 +187,5 @@ nav {
       }
     }
   
+}
 }
