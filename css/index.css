@@ -152,7 +152,6 @@ table {
   padding: 10px 30px;
   font-size: 18px;
   border-radius: 10px;
-  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   border: 1px solid #adadad;
 }
@@ -247,7 +246,6 @@ header .parallax__layer--back {
   }
 }
 header .title {
-  top: 15em;
   color: #fff;
   text-shadow: 2px 2px black;
 }
@@ -334,7 +332,6 @@ nav ul li a {
   padding: 15px 25px;
   text-decoration: none;
   text-transform: capitalize;
-  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 nav ul li a.current,
@@ -364,7 +361,7 @@ nav ul li a:hover {
 }
 nav {
   background-color: #222;
-  width: calc(100vw);
+  width: calc(100vw - 1em);
   position: fixed;
 }
 @media (max-width: 767px) {
@@ -414,7 +411,6 @@ nav {
     padding: 15px 25px;
     text-decoration: none;
     text-transform: capitalize;
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
     font-size: 14px;
     line-height: 1.42857143;
@@ -447,7 +443,7 @@ nav {
 section#about {
   background: #fff;
 }
-@media only screen and (min-width: 720px) and (max-width: 959px) {
+@media only screen and (min-width: 720px) and (max-width: 959px), only screen and (min-width: 960px) and (max-width: 1199px), only screen and (min-width: 1200px) {
   section#about {
     height: 95em;
   }
@@ -712,8 +708,7 @@ section#contact input:focus,
 section#contact textarea:focus {
   border-color: #66afe9;
   outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08), 0 0 8px rgba(102, 175, 233, 0.6);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgb(0 0 0%), 0 0 8px rgb(102 175 3.88333333%);
 }
 section#contact input::placeholder,
 section#contact textarea::placeholder {
@@ -753,10 +748,7 @@ section#contact input {
   line-height: 1.42857143;
   color: #555;
   border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08);
-  -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
-  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  box-shadow: inset 0 1px 1px rgb(0 0 0%);
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   margin: 0 0 1em auto;
 }
@@ -776,7 +768,7 @@ section#contact textarea {
   line-height: 1.42857143;
   color: #555;
   border-radius: 4px;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08);
+  box-shadow: inset 0 1px 1px rgb(0 0 0%);
   margin-bottom: 1em;
   position: relative;
   left: 5em;
